@@ -1,0 +1,17 @@
+.transaction-show {
+  display: flex;
+  align-items: top;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+}
+
+.transaction-show .transaction-content {
+  flex-grow: 1;
+  padding: 0 24px;
+}
+
+.transaction-show p {
+  margin: 0;
+  line-height: 1.4;
+}

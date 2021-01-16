@@ -1,13 +1,19 @@
 h1  {
-  font-size: 42px;
+  font-size: 38px;
+  color: $blue;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 p {
-  font-size: 22px;
+  font-size: 16px;
 }
 
 body {
@@ -16,6 +22,10 @@ body {
 
 .desktop {
   display: none;
+}
+
+.blue {
+  color: $blue;
 }
 
 @media (min-width: 576px) {

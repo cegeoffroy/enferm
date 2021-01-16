@@ -1,5 +1,5 @@
 .btn {
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: bold;
   padding: 6px 27px;
 }
@@ -12,6 +12,7 @@
 }
 
 .btn-ghost:hover {
+  color: $blue;
   opacity: 0.6;
 }
 
