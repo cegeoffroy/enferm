@@ -3,17 +3,26 @@
 
   <div class="navbar navbar-expand-sm navbar-light navbar-enferm">
     <a class="navbar-brand" href="/">
-      Enferm<span style="color: #1D1E33">.</span>
+      <% if current_page?(root_path) %>
+        <strong><span style="color: #1D1E33">Enferm</span></strong><span style="color: #8B959E">.</span>
+      <% end %>
     </a>
 
     <div class="form-inline">
+
+      <%= link_to feed_path do %>
+        <i class="fas fa-envelope inactive-gray"></i>
+      <% end %>
+      <%= link_to feed_path do %>
+        <i class="fas fa-bell ml-3 inactive-gray"></i>
+      <% end %>
 
       <ul class="navbar-nav mr-auto desktop">
         <li class="nav-item mx-2">
         </li>
         <% if !user_signed_in? %>
             <li class="nav-item mx-2">
-              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+              <%= link_to "Login", new_user_session_path, class: "btn btn-ghost" %>
             </li>
         <% else %>
           <li class="dropdown bl-orange">
@@ -22,33 +31,25 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <li class="nav-item">
-                <li><%= link_to "Saved", your_trips_path(current_user), class: "dropdown-item" %></li>
+                <li><%= link_to "Saved", feed_path, class: "dropdown-item" %></li>
               </li>
               <li class="nav-item">
-                <li><%= link_to "Trips", your_trips_path(current_user), class: "dropdown-item" %></li>
+                <li><%= link_to "Shifts", feed_path, class: "dropdown-item" %></li>
               </li>
               <li class="nav-item">
-                <li><%= link_to "Inbox", conversations_path(current_user), class: "dropdown-item" %></li>
+                <li><%= link_to "Inbox", feed_path, class: "dropdown-item" %></li>
               </li>
 
               <li class="dropdown-divider"></li>
 
-              <% if current_user.accommodations.exists? %>
-                <li><%= link_to "Host calendar", host_calendar_path, class: "dropdown-item" %></li>
-                <li><%= link_to "Reservations", your_reservations_path(current_user), class: "dropdown-item" %></li>
-                <li><%= link_to "Listings", accommodations_path, class: "dropdown-item" %></li>
-              <% else %>
-                <li><%= link_to "Host a campsite", host_path, class: "dropdown-item" %></li>
-              <% end %>
-
-              <li><%= link_to "My Account", account_path, class: "dropdown-item" %></li>
+              <li><%= link_to "My Account", feed_path, class: "dropdown-item" %></li>
 
               <li class="dropdown-divider"></li>
               <% if current_user.admin == true %>
-                <li><%= link_to "Admin dashboard", admin_dashboards_path, class: "dropdown-item" %>
+                <li><%= link_to "Admin dashboard", feed_path, class: "dropdown-item" %>
                 </li>
               <% end %>
-              <li><%= link_to "Help & FAQ", faqs_path, class: "dropdown-item" %></li>
+              <li><%= link_to "Help & FAQ", feed_path, class: "dropdown-item" %></li>
               <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
             </ul>
           </li>
@@ -64,15 +65,15 @@
 <nav>
   <!-- Links -->
   <div class="mobile-btm-navbar">
-    <a href="<%= root_path %>" class="btm-nav-btn <%= current_page?(root_path) ? "active-orange" : "inactive-green" %>"><%= svg 'icon-explore'%>Explore</a>
+    <a href="<%= root_path %>" class="btm-nav-btn <%= current_page?(root_path) ? "active-blue" : "inactive-gray" %>"><%= svg 'icon-explore'%>Feed</a>
     <% if !user_signed_in? %>
-      <a href="<%= new_user_registration_path %>" class="btm-nav-btn <%= current_page?(new_user_registration_path) ? "active-orange" : "inactive-green" %>"><%= svg 'icon-signup'%>Sign up</a>
-      <a href="<%= new_user_session_path %>" class="btm-nav-btn <%= current_page?(new_user_session_path) ? "active-orange" : "inactive-green" %>"><%= svg 'icon-user'%>Login</a>
+      <a href="<%= new_user_registration_path %>" class="btm-nav-btn <%= current_page?(new_user_registration_path) ? "active-blue" : "inactive-gray" %>"><%= svg 'icon-signup'%>Sign up</a>
+      <a href="<%= new_user_session_path %>" class="btm-nav-btn <%= current_page?(new_user_session_path) ? "active-blue" : "inactive-gray" %>"><%= svg 'icon-user'%>Login</a>
     <% else %>
-      <a href="<%= root_path %>" class="btm-nav-btn <%= root_path ? "active-orange" : "inactive-green" %>"><%= svg 'icon-saved'%>Saved</a>
-      <a href="<%= root_path %>" class="btm-nav-btn <%= root_path ? "active-orange" : "inactive-green" %>"><%= svg 'icon-trips'%>Trips</a>
-      <a href="<%= root_path %>" class="btm-nav-btn <%= root_path ? "active-orange" : "inactive-green" %>"><%= svg 'icon-inbox'%>Inbox</a>
-      <a href="<%= root_path %>" class="btm-nav-btn <%= root_path ? "active-orange" : "inactive-green" %>"><%= svg 'icon-user'%>Account</a>
+      <a href="<%= root_path %>" class="btm-nav-btn <%= root_path ? "active-blue" : "inactive-gray" %>"><%= svg 'icon-saved'%>Shifts</a>
+      <a href="<%= root_path %>" class="btm-nav-btn <%= root_path ? "active-blue" : "inactive-gray" %>"><%= svg 'icon-trips'%>Timesheet</a>
+      <a href="<%= root_path %>" class="btm-nav-btn <%= root_path ? "active-blue" : "inactive-gray" %>"><%= svg 'icon-inbox'%>Inbox</a>
+      <a href="<%= root_path %>" class="btm-nav-btn <%= root_path ? "active-blue" : "inactive-gray" %>"><%= svg 'icon-user'%>Account</a>
     <% end %>
   </div>
 </nav>

@@ -4,4 +4,7 @@ class PagesController < ApplicationController
   def home
     @user = current_user
   end
+  def feed
+    @user = current_user
+  end
 end
