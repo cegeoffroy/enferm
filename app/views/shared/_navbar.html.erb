@@ -9,12 +9,13 @@
     </a>
 
     <div class="form-inline">
-
-      <%= link_to feed_path do %>
-        <i class="fas fa-envelope inactive-gray"></i>
-      <% end %>
-      <%= link_to feed_path do %>
-        <i class="fas fa-bell ml-3 inactive-gray"></i>
+      <% if user_signed_in? %>
+        <%= link_to feed_path do %>
+          <i class="fas fa-envelope inactive-gray"></i>
+        <% end %>
+        <%= link_to feed_path do %>
+          <i class="fas fa-bell ml-3 inactive-gray"></i>
+        <% end %>
       <% end %>
 
       <ul class="navbar-nav mr-auto desktop">
@@ -65,7 +66,7 @@
 <nav>
   <!-- Links -->
   <div class="mobile-btm-navbar">
-    <a href="<%= root_path %>" class="btm-nav-btn <%= current_page?(root_path) ? "active-blue" : "inactive-gray" %>"><%= svg 'icon-explore'%>Feed</a>
+    <a href="<%= feed_path %>" class="btm-nav-btn <%= current_page?(feed_path) ? "active-blue" : "inactive-gray" %>"><%= svg 'icon-explore'%>Feed</a>
     <% if !user_signed_in? %>
       <a href="<%= new_user_registration_path %>" class="btm-nav-btn <%= current_page?(new_user_registration_path) ? "active-blue" : "inactive-gray" %>"><%= svg 'icon-signup'%>Sign up</a>
       <a href="<%= new_user_session_path %>" class="btm-nav-btn <%= current_page?(new_user_session_path) ? "active-blue" : "inactive-gray" %>"><%= svg 'icon-user'%>Login</a>
