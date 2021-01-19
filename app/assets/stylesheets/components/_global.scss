@@ -28,6 +28,15 @@ body {
   color: $blue;
 }
 
+.orange {
+  color: $orange;
+}
+
+.icon-svg {
+  width: 16px;
+  height: 16px;
+}
+
 @media (min-width: 576px) {
 
   .desktop {

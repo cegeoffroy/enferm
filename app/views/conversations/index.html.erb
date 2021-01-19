@@ -1,0 +1,50 @@
+<div class="container content">
+  <div class="row d-flex justify-content-center p-3">
+    <div class="col-xs-12 w-100">
+
+      <h3><strong>Inbox<span style="color: #E67E22">.</span></strong></h3>
+      <br>
+
+      <div class="container">
+        <% if @conversations.exists? %>
+          <% @conversations.each do |conversation| %>
+            <% other = current_user == conversation.sender ? conversation.recipient : conversation.sender %>
+
+                    <div class="conversation myBox">
+                      <%= image_tag avatar_for(other), class: "img-circle avatar-medium" %>
+                      <div class="conversation-body">
+                        <div class="conversation-header">
+                          <span class="conversation-name ml-3">From <%= other.first_name %></span>
+                          <span class="conversation-time ml-3"><%= conversation.messages.last.message_time %></span>
+                        </div>
+                        <div class="conversation-content">
+                          <p><%= conversation.messages.last.content %></p>
+                        </div>
+                      </div>
+                      <div class="conversation-actions">
+                        <%= link_to conversation_messages_path(conversation) do %>
+                          Read <i class="fas fa-pencil-alt"></i>
+                        <% end %>
+                        <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+                      </div>
+                    </div>
+
+          <% end %>
+          <% else %>
+          <div class="wall-card">
+            <p>You have no conversations.</p>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  $(".myBox").click(function() {
+  window.location = $(this).find("a").attr("href");
+  return false;
+});
+</script>
+

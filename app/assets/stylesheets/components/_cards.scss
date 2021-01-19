@@ -32,6 +32,7 @@
 }
 
 .card-setting {
+  background-color: $white;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 15px 25px;
@@ -44,12 +45,12 @@
   background: $light-gray;
   text-decoration: none;
   cursor: pointer;
-  color: $green;
+
 }
 
 .card-setting a:hover {
   text-decoration: none;
-  color: $green;
+
 }
 
 @media (min-width: 576px) {

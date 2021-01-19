@@ -1,0 +1,51 @@
+<div class="container content">
+  <div class="row d-flex justify-content-center p-3">
+    <div class="col-xs-12 col-md-9 w-100">
+      <div class="message-input">
+        <nav aria-label="breadcrumb">
+          <ol class="list-inline">
+            <li class="list-inline-item"><h4><%= link_to 'Inbox', :back %></h4></li>
+            <li class="list-inline-item">/</li>
+            <li class="list-inline-item active" aria-current="page">Message from <%= @other.first_name %></li>
+          </ol>
+        </nav>
+        <div class="message-input-header">
+          <span>
+            <h3>Conversation with <strong><%= @other.first_name %><span style="color: #E67E22">.</span></strong></h3>
+            <input id="conversation_id" type="hidden" value="<%= @conversation.id %>">
+          </span>
+          <span>
+            <%= link_to "View Profile", @other, class: "btn btn-ghost" %>
+          </span>
+        </div>
+        <br>
+        <div class="card-body">
+          <div class="container">
+            <%= form_for [@conversation, @conversation.messages.new] do |f| %>
+              <div class="form-group">
+                <%= f.text_field :content, placeholder: "Add a message", class: "form-control" %>
+              </div>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <div>
+                <br>
+                <%= f.submit "Send Message", class: "btn-signup" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <br>
+
+    <div>
+      <h3>Conversation<strong><span style="color: #E67E22">.</span></strong></h3>
+    </div>
+    <br>
+
+      <div id="chat">
+        <%= render @messages %>
+      </div>
+
+
+    </div>
+  </div>
+</div>
