@@ -22,3 +22,48 @@
   align-items: flex-end;
   position: relative;
 }
+
+// ACCOUNT PAHE
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+}
+
+.card-setting {
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 15px 25px;
+  svg {
+    margin-bottom: 10px;
+  }
+}
+
+.card-setting:hover {
+  background: $light-gray;
+  text-decoration: none;
+  cursor: pointer;
+  color: $green;
+}
+
+.card-setting a:hover {
+  text-decoration: none;
+  color: $green;
+}
+
+@media (min-width: 576px) {
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 16px;
+  }
+}
