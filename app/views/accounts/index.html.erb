@@ -10,7 +10,7 @@
       <br>
       <div class="wall-card text-center">
         <%= image_tag avatar_for(@user), class: 'avatar' %>
-        <h3 class="mt-3"><%= @user.first_name %> <i class="fas fa-user-check orange"></i></h3>
+        <h3 class="mt-3"><%= @user.first_name %> <i class="fas fa-user-check orange ml-2"></i></h3>
         <p class="mt-3"><%= @user.email %></p>
       </div>
       <br>
@@ -79,6 +79,8 @@
       <div class="container">
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-ghost" %>
       </div>
+
+
       <br>
       <br>
       <br>
