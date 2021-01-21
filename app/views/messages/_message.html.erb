@@ -1,6 +1,6 @@
 <% if message.user == current_user %>
   <div class="message-data">
-    <%= image_tag avatar_for(message.user), class: "img-circle avatar" %>
+    <%= image_tag avatar_for(message.user), class: "avatar" %>
     <div class="message-data-body">
       <div class="message-data-header">
         <span class="message-data-name ml-3 mr-3"><%= message.user.first_name%></span>

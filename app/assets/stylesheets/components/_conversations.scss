@@ -1,0 +1,53 @@
+.conversation {
+  display: flex;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: solid 2px $orange;
+  text-decoration: none;
+}
+
+.conversation:hover {
+  background-color: $light-gray;
+  cursor: pointer;
+}
+
+.conversation .conversation-content {
+  flex-grow: 1;
+  padding: 0 24px;
+}
+
+.conversation p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.conversation-name {
+  color: $green;
+  font-weight: bold;
+}
+
+.conversation-time {
+  color: lighten($gray, 8%);
+}
+
+.conversation .conversation-actions {
+  opacity: 0;
+  display: flex;
+  transition: ease .3s;
+}
+
+.conversation:hover .conversation-actions {
+  opacity: 1;
+}
+
+.conversation .conversation-actions a {
+  color: #999999;
+  margin-left: 16px;
+  font-size: 14px;
+}
+
+.conversation .conversation-actions a:hover {
+  color: #555555;
+}

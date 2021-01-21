@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   get 'messages/index'
   get 'messages/create'
   get 'conversations/index'

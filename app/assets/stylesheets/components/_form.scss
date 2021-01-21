@@ -1,0 +1,19 @@
+.left-signup {
+  min-width: 500px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  text-align: left;
+  background-color: $blue;
+  color: $white;
+  vertical-align: center;
+  padding: 90px 75px;
+  h1, p {
+    color: $white;
+  }
+}
+
+.right-signup {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 20px 45px;
+}
