@@ -1,0 +1,47 @@
+.message-input {
+
+}
+
+.message-input-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.message-data {
+  display: flex;
+}
+
+.message-data-body {
+  margin: 5px;
+  flex-grow: 1;
+}
+
+.message-data-header {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.message-data-name {
+  color: $green;
+  font-weight: bold;
+}
+
+
+.message-data-time {
+  color: lighten($gray, 8%);
+}
+
+.message-data-content {
+  padding: 10px 25px;
+  border-radius: 8px;
+  max-width: 760px;
+}
+
+.my-message {
+  border: solid 2px $orange;
+}
+
+.other-message {
+  border: solid 2px $green;
+  text-align: right;
+}

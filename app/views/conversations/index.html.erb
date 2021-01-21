@@ -11,7 +11,7 @@
             <% other = current_user == conversation.sender ? conversation.recipient : conversation.sender %>
 
                     <div class="conversation myBox">
-                      <%= image_tag avatar_for(other), class: "img-circle avatar-medium" %>
+                      <%= image_tag avatar_for(other), class: "avatar" %>
                       <div class="conversation-body">
                         <div class="conversation-header">
                           <span class="conversation-name ml-3">From <%= other.first_name %></span>

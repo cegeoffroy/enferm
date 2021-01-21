@@ -3,7 +3,7 @@
     <%= link_to conversation_messages_path(conversation) do %>
 
         <div class="message-data">
-          <%= image_tag avatar_for(@other), class: "avatar-medium" %>
+          <%= image_tag avatar_for(@other), class: "avatar" %>
           <div class="message-data-body">
             <div class="message-data-header">
               <span class="message-data-name ml-3 mr-3">From <%= @other.first_name + " " + @other.last_name.first %></span>
