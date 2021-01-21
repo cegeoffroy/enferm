@@ -4,19 +4,17 @@
       <div class="message-input">
         <nav aria-label="breadcrumb">
           <ol class="list-inline">
-            <li class="list-inline-item"><h4><%= link_to 'Inbox', :back %></h4></li>
+            <li class="list-inline-item"><h4><%= link_to 'Inbox', conversations_path %></h4></li>
             <li class="list-inline-item">/</li>
-            <li class="list-inline-item active" aria-current="page">Message from <%= @other.first_name %></li>
+            <li class="list-inline-item active" aria-current="page">Message with <%= @other.first_name %></li>
           </ol>
         </nav>
         <div class="message-input-header">
           <span>
-            <h3>Conversation with <strong><%= @other.first_name %><span style="color: #E67E22">.</span></strong></h3>
+
             <input id="conversation_id" type="hidden" value="<%= @conversation.id %>">
           </span>
-          <span>
-            <%= link_to "View Profile", @other, class: "btn btn-ghost" %>
-          </span>
+
         </div>
         <br>
         <div class="card-body">
@@ -35,9 +33,9 @@
         </div>
       </div>
     <br>
-
+    <hr>
     <div>
-      <h3>Conversation<strong><span style="color: #E67E22">.</span></strong></h3>
+      <h3>Conversation with <strong><%= link_to @other.first_name, @other %></strong></h3>
     </div>
     <br>
 

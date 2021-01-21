@@ -22,7 +22,7 @@
 }
 
 .message-data-name {
-  color: $green;
+  color: $blue;
   font-weight: bold;
 }
 
@@ -38,10 +38,11 @@
 }
 
 .my-message {
-  border: solid 2px $orange;
+  border: solid 2px $blue;
+  background-color: $white;
 }
 
 .other-message {
-  border: solid 2px $green;
+  border: solid 2px $orange;
   text-align: right;
 }
