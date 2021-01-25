@@ -5,12 +5,13 @@ Rails.application.routes.draw do
   get 'conversations/index'
   get 'conversations/create'
   get 'users/show'
-  get 'accounts/index'
+  get 'dashboards/index'
   devise_for :users
 
   # Pages
   root to: 'pages#home'
   get 'feed', to: 'pages#feed'
+  get 'dashboard', to: 'dashboards#index'
   get 'account', to: 'accounts#index'
 
   resources :users, only: [:show, :index]
